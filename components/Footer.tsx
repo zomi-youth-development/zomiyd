@@ -4,6 +4,12 @@ import logoNoBg from '@/public/images/yd_logo-nobg.png';
 // import facebookIcon from '@/public/icons/facebook.svg';
 
 function Footer() {
+    const firstYear = 2022;
+    const currentYear = new Date().getFullYear();
+    const appName = "Zomi YD";
+    const developerTag = "KM";
+    const developerLink = "https://kmung.github.io/";
+    
     return (
         <footer className="bg-blue-secondary text-white pt-8">
             <div className="max-w-6xl w-[calc(100%-2rem)] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-8 bg-blue-primary rounded-lg shadow-lg">
@@ -47,10 +53,15 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <p className="text-center text-xs mt-8 pb-1">©2024-2025 
-                <Link href='/' className='text-pink-secondary hover:text-pink-primary'> Zomi YD</Link>.&nbsp;All Rights Reserved. Made with <span className='text-red'>&hearts;</span> by
-                <a href='https://kmung.github.io/' target='_blank' rel='noreferrer nofollow' className='text-pink-secondary hover:text-pink-primary'>&nbsp;KM</a>&#46;
-            </p>
+            <div className="text-center text-xs mt-8 pb-1">
+                <p>
+                    &copy; {firstYear}-{currentYear}
+                    <Link href='/' className='text-pink-secondary hover:text-pink-primary'> {appName}</Link>.&nbsp;All Rights Reserved.
+                </p>
+                <p>
+                    Made with <span className='text-red'>&hearts;</span> by <a href={developerLink} target='_blank' rel='noreferrer nofollow' className='text-pink-secondary hover:text-pink-primary'>{developerTag}</a>&#46;
+                </p>
+            </div>
         </footer>
     );
 }
