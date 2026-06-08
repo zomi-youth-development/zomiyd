@@ -27,7 +27,7 @@ function Footer() {
                 <div className="flex flex-col items-center md:items-start space-y-2">
                     <h3 className="text-lg font-semibold">Helpful Links</h3>
                     <Link href="/" className="hover:text-pink-secondary">Home</Link>
-                    <Link href="/about" className="hover:text-pink-secondary">About Us</Link>
+                    <Link href="/about-us" className="hover:text-pink-secondary">About Us</Link>
                     <Link href="/what-we-do" className="hover:text-pink-secondary">What We Do</Link>
                 </div>
 
