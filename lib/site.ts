@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "Zomi YD",
   tagline: "Zomi Picing | Siamsin Picing",
   description:
-    "A youth-led nonprofit empowering Zomi diaspora youth across the United States through leadership, community, and cultural identity.",
+    "Zomi Youth Development is a non-profit organization dedicated to empowering Zomi youths through education, leadership, and community engagement.",
   url: "https://www.zomiyouthdevelopment.org",
   ogImage: "/images/og-default.jpg", // TODO: create this 1200x630 image
 
