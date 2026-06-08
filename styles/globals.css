@@ -18,7 +18,10 @@
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-display text-highland-700;
     text-wrap: balance;
   }
@@ -27,24 +30,37 @@
     text-wrap: pretty;
   }
 
-  /* Improve focus rings — visible but not jarring. */
+  /* Visible but not jarring focus rings. Tied to brand color. */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-puan-500;
   }
 
-  /* Selection color tied to brand. */
   ::selection {
     @apply bg-hearth-200 text-highland-900;
   }
 }
 
 @layer components {
-  /* Puan stripe — our recurring cultural motif.
-     Used as a top border on cards, section dividers, and hero accents.
-     The proportions (red 40% / ink 30% / bone 30%) are tuned, not random. */
+  /*
+   * Puan stripe — recurring cultural motif drawn from traditional puan
+   * textile bands. Proportions (red 40% / ink 30% / bone 30%) are tuned
+   * to feel balanced rather than mathematical.
+   */
   .puan-stripe {
     background: linear-gradient(
       to right,
+      theme(colors.puan.500) 0%,
+      theme(colors.puan.500) 40%,
+      theme(colors.ink.DEFAULT) 40%,
+      theme(colors.ink.DEFAULT) 70%,
+      theme(colors.bone.200) 70%,
+      theme(colors.bone.200) 100%
+    );
+  }
+
+  .puan-stripe-vertical {
+    background: linear-gradient(
+      to bottom,
       theme(colors.puan.500) 0%,
       theme(colors.puan.500) 40%,
       theme(colors.ink.DEFAULT) 40%,
