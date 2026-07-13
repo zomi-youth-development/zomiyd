@@ -129,7 +129,6 @@ export function Footer() {
             >
               {siteConfig.developer.tag}
             </a>
-            .
           </p>
         </div>
       </Container>
