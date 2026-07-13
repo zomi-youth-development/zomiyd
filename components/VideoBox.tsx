@@ -9,7 +9,6 @@ interface VideoBoxProps {
 /**
  * VideoBox — embeds an iframe in a rounded surface that maintains 16:9 aspect.
  *
- * Improvements over previous version:
  * - `aspect-video` keeps proportions consistent across breakpoints
  *   (was fixed h-64 / h-96, which distorted on edge widths).
  * - `title` attribute for screen readers (WCAG 2.4.4).

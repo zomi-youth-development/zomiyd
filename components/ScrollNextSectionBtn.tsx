@@ -8,13 +8,6 @@ interface ScrollNextSectionBtnProps {
 
 /**
  * Scroll affordance pinned to the bottom-center of the hero.
- *
- * Improvements over previous version:
- * - Properly centered via `left-1/2 -translate-x-1/2` (the previous
- *   version had no horizontal anchoring and relied on flex parent positioning).
- * - Uses Lucide `ChevronDown` instead of inline SVG.
- * - Adds `type="button"` and `aria-label` for accessibility.
- * - Backdrop-blur and subtle border for legibility over varied hero imagery.
  */
 export function ScrollNextSectionBtn({ targetId }: ScrollNextSectionBtnProps) {
   const scrollToNextSection = () => {

@@ -15,16 +15,6 @@ interface CoverProps {
 /**
  * Cover — the reusable page header shown at the top of content pages
  * like About Us, What We Do, and Stories.
- *
- * Improvements over the previous version:
- * - Uses <Image fill> with priority + object-cover for optimization
- *   (was CSS background-image, which bypasses Next.js image pipeline).
- * - Uses <section> with a proper <h1> instead of an unlabeled <div>.
- * - Dual-stop gradient overlay for legibility across varied imagery.
- * - Eyebrow + optional subtitle support.
- * - Puan-stripe accent along the bottom edge (matches Hero).
- * - Height uses `min-h-[60vh]` and small-viewport units so the top
- *   of the image is never cropped by mobile browser chrome.
  */
 export function Cover({
   eyebrow,

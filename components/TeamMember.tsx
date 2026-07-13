@@ -9,13 +9,6 @@ import type { TeamMemberData } from "@/lib/about";
  * - Fraunces name for editorial hierarchy
  * - Muted Inter role for supporting detail
  * - Bone-200 placeholder background on the avatar for graceful loading
- *
- * Improvements over the previous AvatarCards approach:
- * - Photo uses <Image fill> inside a fixed-aspect wrapper — the previous
- *   version applied w-32 h-32 directly to <Image>, which can distort
- *   non-square photos rather than object-cover cropping them.
- * - No inner "card" chrome (bg-white/shadow) — the team grid works better
- *   with airy avatars on a shared background than with individual boxes.
  */
 export function TeamMember({ name, role, image }: TeamMemberData) {
   return (
