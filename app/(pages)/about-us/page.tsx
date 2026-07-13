@@ -10,6 +10,8 @@ import { siteConfig } from "@/lib/site";
 import coverImage from "@/public/images/yd_texas1.jpg";
 import missionImage from "@/public/images/mission.jpg";
 import visionImage from "@/public/images/vision.jpg";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 export const metadata = {
   title: "About Us",
@@ -254,6 +256,11 @@ export default function AboutUsPage() {
             </div>
           ))}
         </Container>
+        <div className="mt-16 flex justify-center">
+          <Button asChild variant="secondary" size="md">
+            <Link href="/about-us/spotlights">See our member spotlights</Link>
+          </Button>
+        </div>
       </Section>
     </main>
   );

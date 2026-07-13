@@ -28,7 +28,7 @@ export const siteConfig = {
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About Us" },
     { href: "/what-we-do", label: "What We Do" },
-    { href: "/stories", label: "Stories" }, // future blog landing
+    { href: "/newsletter", label: "Newsletter" }, // future blog landing
   ],
 
   /** Prominent CTA shown as a button in the header and footer. */
