@@ -197,7 +197,7 @@ export default function AboutUsPage() {
       */}
       
       {/* ---------- Team ---------- */}
-      <Section tone="muted" spacing="lg">
+      <Section tone="muted" spacing="lg" id="team">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <Eyebrow tone="warm">The people</Eyebrow>
