@@ -82,7 +82,7 @@ export function Footer() {
           {/* Social */}
           <div className="md:col-span-3">
             <h2 className="font-display text-base font-medium text-bone-50">
-              Follow
+              Follow Us
             </h2>
             <ul className="mt-4 flex gap-3">
               {socials.map(({ href, label, Icon }) => (
