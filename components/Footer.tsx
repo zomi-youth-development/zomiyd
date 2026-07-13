@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SmilePlus, Sticker, TvMinimalPlay, Heart } from "lucide-react";
+import { FileHeart, Camera, MonitorPlay, Heart } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { StripeAccent } from "@/components/ui/StripeAccent";
 import { siteConfig } from "@/lib/site";
@@ -19,9 +19,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socials = [
-    { href: siteConfig.links.facebook, label: "Facebook", Icon: SmilePlus },
-    { href: siteConfig.links.instagram, label: "Instagram", Icon: Sticker },
-    { href: siteConfig.links.youtube, label: "YouTube", Icon: TvMinimalPlay },
+    { href: siteConfig.links.facebook, label: "Facebook", Icon: FileHeart },
+    { href: siteConfig.links.instagram, label: "Instagram", Icon: Camera },
+    { href: siteConfig.links.youtube, label: "YouTube", Icon: MonitorPlay },
   ];
 
   return (

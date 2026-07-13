@@ -1,100 +1,177 @@
 import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-//
-import Hero from "@/components/Hero";
-import VideoBox from "@/components/VideoBox";
+
+import { Hero } from "@/components/Hero";
+import { VideoBox } from "@/components/VideoBox";
+import { Section } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Container";
+import { Card, CardHeader, CardBody, CardTitle } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Stat } from "@/components/ui/Stat";
+
 import AboutUsImg from "@/public/images/img4.png";
-// import ProgramImg from "@/public/images/volunteers.jpg";
-import AnimateCounters from "@/components/AnimateCounter";
 import EducationImg from "@/public/images/education_temp_img.jpg";
 import CommunityImg from "@/public/images/community_pic_yd.jpg";
 import LeadershipImg from "@/public/images/leadership_yd.jpg";
-
-interface Counter {
-  end: number;
-  text: string;
-}
 
 interface Program {
   name: string;
   description: string;
   image: StaticImageData;
+  eyebrow: string;
 }
 
 export default function Home() {
-  // TODO: load the theme song from strapi
-  const themeSongYoutubeLink = 'https://www.youtube.com/embed/PLuHDYufJRM?si=VeGebn5-6uru1Ns5';
+  // TODO: load the theme song URL from Strapi as a `homepage_video` content type.
+  const themeSongYoutubeLink =
+    "https://www.youtube.com/embed/PLuHDYufJRM?si=VeGebn5-6uru1Ns5";
 
-  const counters: Counter[] = [
-    { end: 100, text: 'YD Workforce' },
-    { end: 3, text: 'Countries Respresented' },
-    { end: 40, text: 'Outside Volunteers' }
-  ];
-
-const programs: Program[] = [
-    { name: 'Youth Leadership Program', description: 'Empowering young leaders through training and mentorship.', image: LeadershipImg },
-    { name: 'Community Outreach', description: 'Engaging with the community to provide support and resources.', image: CommunityImg },
-    { name: 'Educational Workshops', description: 'Offering workshops on various educational topics.', image: EducationImg },
+  const programs: Program[] = [
+    {
+      name: "Youth Leadership Program",
+      description:
+        "Empowering young leaders through training and mentorship.",
+      image: LeadershipImg,
+      eyebrow: "Leadership",
+    },
+    {
+      name: "Community Outreach",
+      description:
+        "Engaging with the community to provide support and resources.",
+      image: CommunityImg,
+      eyebrow: "Community",
+    },
+    {
+      name: "Educational Workshops",
+      description:
+        "Offering workshops on various educational topics for youth and families.",
+      image: EducationImg,
+      eyebrow: "Education",
+    },
   ];
 
   return (
-    <main>
+    <main id="main-content">
       <Hero />
-      <section id="video-section" className='py-8'>
-        { /* TODO: add a loading skeleton to the suspense fallback */}
-        <Suspense fallback={<p>Loading video...</p>}>
-          <div className='container md:w-2/3 lg:w-1/2 mx-auto'>
-            <VideoBox src={themeSongYoutubeLink}/>
+
+      {/* Video — narrow container keeps focus on the video itself */}
+      <Section id="video-section" tone="default" spacing="md">
+        <Container width="narrow">
+          <Suspense
+            fallback={
+              <div className="aspect-video w-full animate-pulse rounded-xl bg-bone-200" />
+            }
+          >
+            <VideoBox
+              src={themeSongYoutubeLink}
+              title="Zomi YD theme song"
+            />
+          </Suspense>
+        </Container>
+      </Section>
+
+      {/* Stats — sunken bone tone separates this band visually */}
+      <Section tone="muted" spacing="md">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+            <Stat value={100} suffix="+" label="YD Workforce" />
+            <Stat value={3} label="Countries Represented" />
+            <Stat value={40} suffix="+" label="Outside Volunteers" />
           </div>
-        </Suspense>
-      </section>
-      <AnimateCounters counters={counters} />
-      <section className="bg-blue-secondary text-white py-8">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
-            <div>
-                <Image 
-                  src={AboutUsImg} 
-                  alt="About Us" 
-                  className="w-full h-auto rounded-lg shadow-md"
+        </Container>
+      </Section>
+
+      {/* About — asymmetric 5/7 split, portrait image, editorial typography */}
+      <Section tone="default" spacing="lg">
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 lg:gap-16">
+            <div className="md:col-span-5">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-raised">
+                <Image
+                  src={AboutUsImg}
+                  alt="Zomi YD community"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover"
                 />
+              </div>
             </div>
-            <div>
-                <h2 className="text-3xl font-bold mb-4">About Us</h2>
-                <p className="text-lg font-semibold text-gray-700 mb-4">Zomi Youth Development is part of a non-profit youth organization that aims to support and uplift the Zomi youths around the world.</p>
-                <p className="text-lg text-gray-700 mb-4">Our slogan is “Zomi Picing, Siamsin Picing!” Perfectly capturing the shared vision that our member body has.</p>
-                <Link href="/about-us">
-                    <button className='bg-sky-500'>Learn More About YD</button>
-                </Link>
+            <div className="md:col-span-6 md:col-start-7">
+              <Eyebrow tone="warm">About us</Eyebrow>
+              <h2 className="mt-3 font-display text-display">
+                A community of youth, by youth, for youth
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-ink-soft">
+                Zomi Youth Development is a non-profit organization that
+                supports and uplifts Zomi youths around the world.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-ink-muted">
+                Our slogan — &ldquo;Zomi Picing, Siamsin Picing!&rdquo; —
+                captures the shared vision of our member body. We rise
+                together, in identity and in capability.
+              </p>
+              <Button asChild variant="secondary" size="md" className="mt-7">
+                <Link href="/about-us">Learn more about YD</Link>
+              </Button>
             </div>
-        </div>
-      </section>
-      <section className="bg-gray-100 py-8">
-        <div className="max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
-                <div>
-                    <h2 className="text-3xl font-bold mb-2">What We Do</h2>
-                    <h3 className="text-xl font-semibold mb-4">Our Programs</h3>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Programs — asymmetric intro, then accent-striped cards */}
+      <Section
+        tone="default"
+        spacing="lg"
+        className="border-t border-bone-200"
+      >
+        <Container>
+          <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8">
+            <div className="md:col-span-5">
+              <Eyebrow tone="puan">What we do</Eyebrow>
+              <h2 className="mt-3 font-display text-display">
+                Our programs
+              </h2>
+            </div>
+            <div className="md:col-span-7 md:col-start-6">
+              <p className="text-lg leading-relaxed text-ink-soft">
+                Our programs are designed to empower the youth through
+                education, community engagement, and leadership development.
+                We believe in the power of cultural identity and connection
+                to transform lives and communities.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {programs.map((program) => (
+              <Card key={program.name} accent interactive>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={program.image}
+                    alt={program.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-400 ease-out-soft group-hover:scale-[1.03]"
+                  />
                 </div>
-                <div>
-                    <p className="text-lg text-gray-700 mb-4">Our programs and initiatives are designed to empower the youth through education, community engagement, and leadership development. We believe in the power of technology and innovation to transform lives and communities.</p>
-                </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {programs.map((program, index) => (
-                    <div key={index} className="bg-white p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105">
-                        <Image
-                        src={program.image}
-                        alt={program.name}
-                        className="w-full h-48 object-cover rounded-lg mb-4"
-                        />
-                        <h3 className="text-2xl font-semibold mb-2">{program.name}</h3>
-                        <p className="text-gray-700">{program.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-      </section>
+                <CardHeader>
+                  <Eyebrow tone="warm" className="mb-2">
+                    {program.eyebrow}
+                  </Eyebrow>
+                  <CardTitle>{program.name}</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  <p className="leading-relaxed text-ink-soft">
+                    {program.description}
+                  </p>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
     </main>
   );
 }
