@@ -19,6 +19,7 @@ import HeroCoverImg from "@/public/images/herocover.png";
  * - Bouncing scroll affordance pinned to bottom-center.
  */
 export function Hero() {
+  const donateToYdStripeLink = "https://donate.stripe.com/28o01n8tpf94fW8000";
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
       <Image
@@ -48,7 +49,8 @@ export function Hero() {
         </p>
         <div className="mt-9 flex justify-center">
           <Button asChild variant="primary" size="lg">
-            <Link href="/donate">Donate</Link>
+            {/*<Link href="/donate">Donate</Link>*/}
+            <a href={donateToYdStripeLink} target="_blank" rel="noopener norefresher">Donate</a>
           </Button>
         </div>
       </div>

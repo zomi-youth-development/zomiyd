@@ -19,6 +19,10 @@ import logoNoBg from "@/public/images/yd_logo-nobg.png";
  *
  * Scroll detection uses requestAnimationFrame throttling for performance.
  */
+
+// using a stripe payment link for a temp donation solution
+const donateToYdStripeLink = "https://donate.stripe.com/28o01n8tpf94fW8000";
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -90,7 +94,9 @@ export function Header() {
             </Link>
           ))}
           <Button asChild variant="primary" size="sm" className="ml-2">
-            <Link href={siteConfig.ctaNav.href}>{siteConfig.ctaNav.label}</Link>
+            {/* <Link href={siteConfig.ctaNav.href}>{siteConfig.ctaNav.label}</Link>
+            */}
+            <a href={donateToYdStripeLink} target="_blank" rel="noopener norefresher">Donate</a>
           </Button>
         </nav>
 
@@ -154,7 +160,8 @@ function MobileNav() {
             className="mt-6"
             onClick={() => setOpen(false)}
           >
-            <Link href={siteConfig.ctaNav.href}>{siteConfig.ctaNav.label}</Link>
+            {/*<Link href={siteConfig.ctaNav.href}>{siteConfig.ctaNav.label}</Link>*/}
+            <a href={donateToYdStripeLink} target="_blank" rel="noopener norefresher">Donate</a>
           </Button>
         </Dialog.Content>
       </Dialog.Portal>

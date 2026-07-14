@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FileHeart, Camera, MonitorPlay, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
+import FacebookSvgicon from "@/public/icons/social-media/facebook.svg";
+import InstagramSvgicon from "@/public/icons/social-media/instagram.svg";
+import YoutubeSvgIcon from "@/public/icons/social-media/youtube.svg";
 import { Container } from "@/components/ui/Container";
 import { StripeAccent } from "@/components/ui/StripeAccent";
 import { siteConfig } from "@/lib/site";
@@ -16,12 +19,14 @@ import logoNoBg from "@/public/images/yd_logo-nobg.png";
  * - bottom row with copyright + credit
  */
 export function Footer() {
+  const donateToYdStripeLink = "https://donate.stripe.com/28o01n8tpf94fW8000";
+
   const currentYear = new Date().getFullYear();
 
   const socials = [
-    { href: siteConfig.links.facebook, label: "Facebook", Icon: FileHeart },
-    { href: siteConfig.links.instagram, label: "Instagram", Icon: Camera },
-    { href: siteConfig.links.youtube, label: "YouTube", Icon: MonitorPlay },
+    { href: siteConfig.links.facebook, label: "Facebook", icon: FacebookSvgicon },
+    { href: siteConfig.links.instagram, label: "Instagram", icon: InstagramSvgicon },
+    { href: siteConfig.links.youtube, label: "YouTube", icon: YoutubeSvgIcon },
   ];
 
   return (
@@ -69,12 +74,15 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                {/*}
                 <Link
                   href={siteConfig.ctaNav.href}
                   className="text-bone-200 transition-colors hover:text-hearth-300"
                 >
                   {siteConfig.ctaNav.label}
                 </Link>
+                */}
+                <a className="text-bone-200 transition-colors hover:text-hearth-300" href={donateToYdStripeLink} target="_blank" rel="noopener norefresher">Donate</a>
               </li>
             </ul>
           </nav>
@@ -85,16 +93,16 @@ export function Footer() {
               Follow Us
             </h2>
             <ul className="mt-4 flex gap-3">
-              {socials.map(({ href, label, Icon }) => (
+              {socials.map(({ href, label, icon }) => (
                 <li key={label}>
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-highland-500 text-bone-100 transition-colors hover:bg-highland-600 hover:text-hearth-300"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-highland-500 transition-colors bg-highland-100 hover:bg-highland-400"
                   >
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                    <Image src={icon} alt="" className="h-5 w-5" aria-hidden="true" />
                   </a>
                 </li>
               ))}
