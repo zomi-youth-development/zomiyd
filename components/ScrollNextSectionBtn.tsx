@@ -1,33 +1,29 @@
-'use client';
+"use client";
+
+import { ChevronDown } from "lucide-react";
 
 interface ScrollNextSectionBtnProps {
-    targetId: string;
+  targetId: string;
 }
 
-export default function ScrollNextSectionBtn({ targetId } : ScrollNextSectionBtnProps) {
-    const scrollToNextSection = () => {
-        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
-    };
+/**
+ * Scroll affordance pinned to the bottom-center of the hero.
+ */
+export function ScrollNextSectionBtn({ targetId }: ScrollNextSectionBtnProps) {
+  const scrollToNextSection = () => {
+    document
+      .getElementById(targetId)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
-    return (
-        <button 
-            onClick={scrollToNextSection} 
-            className="absolute bottom-10 animate-bounce shadow-lg text-white focus:outline-none bg-blue-secondary rounded-full p-2 z-10"
-        >
-            <svg 
-                className="w-8 h-8" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
-                    d="M19 9l-7 7-7-7">
-                </path>
-            </svg>
-        </button>
-    );
+  return (
+    <button
+      type="button"
+      onClick={scrollToNextSection}
+      aria-label="Scroll to next section"
+      className="absolute bottom-8 left-1/2 z-10 inline-flex h-12 w-12 -translate-x-1/2 animate-bounce items-center justify-center rounded-full border border-bone-50/20 bg-highland-900/40 text-bone-50 shadow-soft backdrop-blur-sm transition-colors hover:bg-highland-900/60"
+    >
+      <ChevronDown className="h-6 w-6" aria-hidden="true" />
+    </button>
+  );
 }

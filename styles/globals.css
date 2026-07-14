@@ -2,24 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  text-rendering: optimizeLegibility;
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-canvas text-body font-sans;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-highland-700;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible but not jarring focus rings. Tied to brand color. */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-puan-500;
+  }
+
+  ::selection {
+    @apply bg-hearth-200 text-highland-900;
+  }
 }
 
-body {
-  @apply font-sans;
-  scroll-behavior: smooth;
-  background-color: white;
-}
+@layer components {
+  /*
+   * Puan stripe — recurring cultural motif drawn from traditional puan
+   * textile bands. Proportions (red 40% / ink 30% / bone 30%) are tuned
+   * to feel balanced rather than mathematical.
+   */
+  .puan-stripe {
+    background: linear-gradient(
+      to right,
+      theme(colors.puan.500) 0%,
+      theme(colors.puan.500) 40%,
+      theme(colors.ink.DEFAULT) 40%,
+      theme(colors.ink.DEFAULT) 70%,
+      theme(colors.bone.200) 70%,
+      theme(colors.bone.200) 100%
+    );
+  }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  .puan-stripe-vertical {
+    background: linear-gradient(
+      to bottom,
+      theme(colors.puan.500) 0%,
+      theme(colors.puan.500) 40%,
+      theme(colors.ink.DEFAULT) 40%,
+      theme(colors.ink.DEFAULT) 70%,
+      theme(colors.bone.200) 70%,
+      theme(colors.bone.200) 100%
+    );
+  }
 }
-
-/*
-@theme {  --text-tiny: 0.625rem; }
-*/
