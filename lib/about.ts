@@ -85,8 +85,7 @@ export const teamStructure: TeamSectionData[] = [
         title: "",
         members: [
           { name: "Lia Mary Siam", role: "Executive Director", image: marysiam },
-          { name: "Tg. Dal", role: "Assistant Director", image: dal },
-          { name: "Tg. Thomas Mung", role: "Assistant Director", image: teamImage },
+          { name: "Lia Niang Hoih", role: "Assistant Director", image: teamImage },
           { name: "Lia Siam Nu", role: "Assistant Director", image: siamnu },
         ],
       },
@@ -100,33 +99,30 @@ export const teamStructure: TeamSectionData[] = [
         title: "Education",
         members: [
           { name: "Khai Boih", role: "Manager", image: khaiboih },
-          { name: "Nuam Boih", role: "Assistant", image: teamImage },
         ],
       },
       {
         title: "Training",
         members: [
-          { name: "Thomas Mung", role: "Manager", image: teamImage },
-          { name: "Tawi Tawi", role: "Assistant", image: teamImage },
+          { name: "Lia Mary Siam", role: "Manager", image: marysiam },
         ],
       },
       {
         title: "Research",
         members: [
-          { name: "Juni Saw Sawm", role: "Manager", image: teamImage },
+          { name: "Tg. Dal Thang", role: "Manager", image: teamImage },
         ],
       },
       {
         title: "Zomi Language & Literature",
         members: [
-          { name: "Mung No", role: "Manager", image: mungno },
-          { name: "San Shalom", role: "Assistant", image: teamImage },
+          { name: "San Shalom", role: "Manager", image: teamImage },
         ],
       },
       {
         title: "Creative",
         members: [
-          { name: "Tung Pi", role: "Manager", image: teamImage },
+          { name: "Siamnu", role: "Manager", image: teamImage },
         ],
       },
     ],
@@ -138,14 +134,15 @@ export const teamStructure: TeamSectionData[] = [
       {
         title: "Finance",
         members: [
-          { name: "Niang Hoih", role: "Manager", image: teamImage },
+          { name: "Niang Hoih", role: "Chair", image: teamImage },
+          { name: "Sung Sung", role: "Vice Chair", image: teamImage}
         ],
       },
       {
         title: "Human Resources",
         members: [
-          { name: "Dal Thang", role: "Manager", image: dal },
-          { name: "Mary Siam", role: "Assistant", image: marysiam },
+          { name: "Vungpi", role: "Chair", image: teamImage },
+          { name: "Dim Nem", role: "Vice Chair", image: teamImage },
         ],
       },
     ],
