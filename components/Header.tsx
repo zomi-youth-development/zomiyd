@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site";
 import logoNoBg from "@/public/images/yd_logo-nobg.png";
+import menuSvgIcon from "@/public/icons/list.svg";
+import menuCloseSvgIcon from "@/public/icons/x.svg";
 
 /**
  * Header — fixed top bar that:
@@ -118,7 +119,7 @@ function MobileNav() {
           aria-label="Open menu"
           className="rounded-md p-2 text-bone-50 transition-colors hover:bg-highland-600 md:hidden"
         >
-          <Menu className="h-6 w-6" aria-hidden="true" />
+          <Image src={menuSvgIcon} alt="" className="h-6 w-6" aria-hidden="true" />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -134,7 +135,7 @@ function MobileNav() {
                 aria-label="Close menu"
                 className="rounded-md p-2 text-highland-700 transition-colors hover:bg-bone-200"
               >
-                <X className="h-5 w-5" aria-hidden="true" />
+                <Image src={menuCloseSvgIcon} className="h-5 w-5" aria-hidden="true" alt="" />
               </button>
             </Dialog.Close>
           </div>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Heart } from "lucide-react";
 import FacebookSvgicon from "@/public/icons/social-media/facebook.svg";
 import InstagramSvgicon from "@/public/icons/social-media/instagram.svg";
 import YoutubeSvgIcon from "@/public/icons/social-media/youtube.svg";
@@ -8,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { StripeAccent } from "@/components/ui/StripeAccent";
 import { siteConfig } from "@/lib/site";
 import logoNoBg from "@/public/images/yd_logo-nobg.png";
+import HeartSvgIcon from "@/public/icons/heart.svg";
 
 /**
  * Footer — site-wide footer. Reads all data from `siteConfig` so updates
@@ -123,12 +123,9 @@ export function Footer() {
             . All rights reserved.
           </p>
           <p className="inline-flex items-center gap-1.5">
-            Made with{" "}
-            <Heart
-              className="h-3 w-3 fill-puan-500 text-puan-500"
-              aria-hidden="true"
-            />{" "}
-            by{" "}
+            Made with&nbsp;
+            <Image src={HeartSvgIcon} alt="" className="h-3 w-3" aria-hidden="true" />
+            by&nbsp;
             <a
               href={siteConfig.developer.url}
               target="_blank"
