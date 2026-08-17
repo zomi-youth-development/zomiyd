@@ -82,7 +82,7 @@ export function Footer() {
                   {siteConfig.ctaNav.label}
                 </Link>
                 */}
-                <a className="text-bone-200 transition-colors hover:text-hearth-300" href={donateToYdStripeLink} target="_blank" rel="noopener norefresher">Donate</a>
+                <a className="text-bone-200 transition-colors hover:text-hearth-300" href={donateToYdStripeLink} target="_blank" rel="noopener noreferrer">Donate</a>
               </li>
             </ul>
           </nav>
