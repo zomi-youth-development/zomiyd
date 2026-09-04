@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { missionPillars, teamStructure } from "@/lib/about";
-// import { siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 
 import coverImage from "@/public/images/yd_texas1.jpg";
 import missionImage from "@/public/images/mission.jpg";
@@ -256,11 +256,11 @@ export default function AboutUsPage() {
             </div>
           ))}
         </Container>
-        <div className="mt-16 flex justify-center">
+        {/* <div className="mt-16 flex justify-center">
           <Button asChild variant="secondary" size="md">
             <Link href="/about-us/spotlights">See our member spotlights</Link>
           </Button>
-        </div>
+        </div> */}
       </Section>
     </main>
   );
