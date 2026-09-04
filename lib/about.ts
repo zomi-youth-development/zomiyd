@@ -1,9 +1,9 @@
 import type { StaticImageData } from "next/image";
 
-import dal from "@/public/images/teams/dal.jpeg";
+// import dal from "@/public/images/teams/dal.jpeg";
 import khaiboih from "@/public/images/teams/khai_boih.jpeg";
 import marysiam from "@/public/images/teams/mary_siam.jpg";
-import mungno from "@/public/images/teams/mungno.jpeg";
+// import mungno from "@/public/images/teams/mungno.jpeg";
 import siamnu from "@/public/images/teams/siam_nu.jpeg";
 import teamImage from "@/public/images/team.jpg";
 
