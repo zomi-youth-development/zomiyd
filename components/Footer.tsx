@@ -19,8 +19,6 @@ import HeartSvgIcon from "@/public/icons/heart.svg";
  * - bottom row with copyright + credit
  */
 export function Footer() {
-  const donateToYdStripeLink = "https://donate.stripe.com/28o01n8tpf94fW8000";
-
   const currentYear = new Date().getFullYear();
 
   const socials = [
@@ -74,15 +72,14 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                {/*}
-                <Link
+                <a
                   href={siteConfig.ctaNav.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-bone-200 transition-colors hover:text-hearth-300"
                 >
                   {siteConfig.ctaNav.label}
-                </Link>
-                */}
-                <a className="text-bone-200 transition-colors hover:text-hearth-300" href={donateToYdStripeLink} target="_blank" rel="noopener noreferrer">Donate</a>
+                </a>
               </li>
             </ul>
           </nav>

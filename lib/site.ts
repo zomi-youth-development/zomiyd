@@ -31,9 +31,13 @@ export const siteConfig = {
     // { href: "/newsletter", label: "Newsletter" }, // future blog landing
   ],
 
-  /** Prominent CTA shown as a button in the header and footer. */
+  /**
+   * Prominent CTA shown as a button in the header, hero, footer, and
+   * What We Do page. Currently a Stripe Payment Link (temp donation
+   * solution) — swap to "/donate" once an on-site donation page exists.
+   */
   ctaNav: {
-    href: "/donate",
+    href: "https://donate.stripe.com/28o01n8tpf94fW8000",
     label: "Donate",
   },
 

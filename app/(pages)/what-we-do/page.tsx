@@ -7,6 +7,7 @@ import { Card, CardHeader, CardBody, CardTitle } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { programs, departments } from "@/lib/what-we-do";
+import { siteConfig } from "@/lib/site";
 
 import coverImage from "@/public/images/img3.jpg";
 
@@ -162,7 +163,7 @@ export default function WhatWeDoPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button asChild variant="primary" size="lg">
-                <Link href="/donate">Donate</Link>
+                <a href={siteConfig.ctaNav.href} target="_blank" rel="noopener noreferrer">{siteConfig.ctaNav.label}</a>
               </Button>
               <Button asChild variant="outline-light" size="lg">
                 <Link href="/about-us">Meet the team</Link>
