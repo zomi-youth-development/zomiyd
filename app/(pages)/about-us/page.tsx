@@ -5,13 +5,12 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { missionPillars, teamStructure } from "@/lib/about";
-import { siteConfig } from "@/lib/site";
+// import { siteConfig } from "@/lib/site";
 
 import coverImage from "@/public/images/yd_texas1.jpg";
 import missionImage from "@/public/images/mission.jpg";
 import visionImage from "@/public/images/vision.jpg";
-import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+// import { Button } from "@/components/ui/Button";
 
 export const metadata = {
   title: "About Us",
