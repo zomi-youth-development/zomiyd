@@ -161,7 +161,7 @@ export default function WhatWeDoPage() {
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-bone-100">
               Our programs are powered by community. Your support helps us
               reach more Zomi youth with mentorship, education, and cultural
-              grounding.
+              connection.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button asChild variant="primary" size="lg">
