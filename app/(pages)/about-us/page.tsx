@@ -8,7 +8,7 @@ import { missionPillars, leadership } from "@/lib/about";
 // import { siteConfig } from "@/lib/site";
 
 import coverImage from "@/public/images/yd_texas1.jpg";
-import missionImage from "@/public/images/mission.jpg";
+// import missionImage from "@/public/images/mission.jpg";
 // import visionImage from "@/public/images/vision.jpg";
 import ydMembersGlobe from "@/public/images/yd_members_globe.jpg"
 import educationTalkImg from "@/public/images/education_img.jpeg";

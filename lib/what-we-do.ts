@@ -1,7 +1,6 @@
 import type { StaticImageData } from "next/image";
 
 // import images for now
-import volunteerImage from "@/public/images/volunteers.jpg";
 import officeImage from "@/public/images/office.jpg";
 import ellPrograImg from "@/public/images/ell_batch_six.jpg";
 import gradMentorshipImg from "@/public/images/zomi_grad_mentoshi_program.jpg";
