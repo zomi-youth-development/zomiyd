@@ -4,13 +4,25 @@
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
 
 export async function getAllNewsletters() {
-  const res = await fetch(`${STRAPI_URL}/api/newsletters?populate=*`);
-  const data = await res.json();
-  return data.data;
+  try {
+    const res = await fetch(`${STRAPI_URL}/api/newsletters?populate=*`);
+    if (!res.ok) throw new Error(`Strapi ${res.status}`);
+    const data = await res.json();
+    return data.data ?? [];
+  } catch (err) {
+    console.error("getAllNewsletters failed:", err);
+    return []; // page can render "no newsletters" instead of crashing
+  }
 }
 
 export async function getNewsletterBySlug(slug: string) {
-  const res = await fetch(`${STRAPI_URL}/api/newsletters?filters[slug][$eq]=${slug}&populate=*`);
-  const data = await res.json();
-  return data.data?.[0] || null;
+  try {
+    const res = await fetch(`${STRAPI_URL}/api/newsletters?filters[slug][$eq]=${slug}&populate=*`);
+    if (!res.ok) throw new Error(`Strapi ${res.status}`);
+    const data = await res.json();
+    return data.data?.[0] || null;
+  } catch (err) {
+    console.error("getNewsletterBySlug failed:", err);
+    return [];
+  }
 }
