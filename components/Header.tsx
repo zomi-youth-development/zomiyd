@@ -9,7 +9,6 @@ import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site";
 import logoNoBg from "@/public/images/yd_logo-nobg.png";
-import menuSvgIcon from "@/public/icons/list.svg";
 import menuCloseSvgIcon from "@/public/icons/x.svg";
 
 /**
@@ -114,7 +113,19 @@ function MobileNav() {
           aria-label="Open menu"
           className="rounded-md p-2 text-bone-50 transition-colors hover:bg-highland-600 md:hidden"
         >
-          <Image src={menuSvgIcon} alt="" className="h-6 w-6" aria-hidden="true" />
+          {/* Inline SVG (not <Image>) so fill="currentColor" inherits text-bone-50 */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="h-6 w-6"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
