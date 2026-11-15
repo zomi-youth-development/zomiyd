@@ -9,7 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { programs, departments } from "@/lib/what-we-do";
 import { siteConfig } from "@/lib/site";
 
-import coverImage from "@/public/images/img3.jpg";
+// import images for now
+// import coverImage from "@/public/images/img3.jpg";
+import ydEventImgCover from "@/public/images/yd_event_23.jpg";
 
 export const metadata = {
   title: "What We Do",
@@ -24,7 +26,7 @@ export default function WhatWeDoPage() {
         eyebrow="What we do"
         title="Programs &amp; Departments"
         subtitle="The programs and teams powering our mission."
-        backgroundImage={coverImage}
+        backgroundImage={ydEventImgCover}
       />
 
       {/* ---------- Intro ---------- */}

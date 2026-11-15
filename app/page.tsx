@@ -12,9 +12,10 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Stat } from "@/components/ui/Stat";
 
 import AboutUsImg from "@/public/images/img4.png";
-import EducationImg from "@/public/images/education_temp_img.jpg";
+// import EducationImg from "@/public/images/education_temp_img.jpg";
 import CommunityImg from "@/public/images/community_pic_yd.jpg";
 import LeadershipImg from "@/public/images/leadership_yd.jpg";
+import gradMentorshipImg from "@/public/images/zomi_grad_mentoshi_program.jpg";
 
 interface Program {
   name: string;
@@ -25,8 +26,7 @@ interface Program {
 
 export default function Home() {
   // TODO: load the theme song URL from Strapi as a `homepage_video` content type.
-  const themeSongYoutubeLink =
-    "https://www.youtube.com/embed/PLuHDYufJRM?si=VeGebn5-6uru1Ns5";
+  const themeSongYoutubeLink = "https://www.youtube.com/embed/PLuHDYufJRM?si=VeGebn5-6uru1Ns5";
 
   const programs: Program[] = [
     {
@@ -47,7 +47,7 @@ export default function Home() {
       name: "Educational Workshops",
       description:
         "Offering workshops on various educational topics for youth and families.",
-      image: EducationImg,
+      image: gradMentorshipImg,
       eyebrow: "Education",
     },
   ];

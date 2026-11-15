@@ -4,12 +4,14 @@ import { TeamMember } from "@/components/TeamMember";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { missionPillars, teamStructure } from "@/lib/about";
+import { missionPillars, leadership } from "@/lib/about";
 // import { siteConfig } from "@/lib/site";
 
 import coverImage from "@/public/images/yd_texas1.jpg";
 import missionImage from "@/public/images/mission.jpg";
-import visionImage from "@/public/images/vision.jpg";
+// import visionImage from "@/public/images/vision.jpg";
+import ydMembersGlobe from "@/public/images/yd_members_globe.jpg"
+import educationTalkImg from "@/public/images/education_img.jpeg";
 // import { Button } from "@/components/ui/Button";
 
 export const metadata = {
@@ -89,11 +91,11 @@ export default function AboutUsPage() {
             <div className="md:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-lifted">
                 <Image
-                  src={missionImage}
+                  src={educationTalkImg}
                   alt=""
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -140,7 +142,7 @@ export default function AboutUsPage() {
             <div className="md:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-raised">
                 <Image
-                  src={visionImage}
+                  src={ydMembersGlobe}
                   alt=""
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
@@ -213,47 +215,16 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          {teamStructure.map((section) => (
-            <div key={section.title} className="mt-16">
-              <div className="text-center">
-                <h3 className="font-display text-2xl font-medium text-highland-700 sm:text-3xl">
-                  {section.title}
-                </h3>
-                {section.subtitle && (
-                  <p className="mt-2 text-sm uppercase tracking-[0.12em] text-ink-muted">
-                    {section.subtitle}
-                  </p>
-                )}
-              </div>
-
-              {section.flat ? (
-                // Single flat group — no subgroup labels
-                <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4">
-                  {section.groups[0].members.map((member) => (
-                    <TeamMember key={member.name} {...member} />
-                  ))}
-                </div>
-              ) : (
-                // Grouped — each subgroup gets its own label
-                <div className="mt-10 space-y-14">
-                  {section.groups.map((group) => (
-                    <div key={group.title}>
-                      {group.title && (
-                        <h4 className="mb-8 text-center font-display text-lg font-medium text-puan-600">
-                          {group.title}
-                        </h4>
-                      )}
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4">
-                        {group.members.map((member) => (
-                          <TeamMember key={member.name} {...member} />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+          <ul
+            role="list"
+            className="mx-auto mt-12 grid max-w-sm grid-cols-1 gap-6 sm:mt-16 sm:max-w-none sm:grid-cols-3 lg:grid-cols-4"
+          >
+            {leadership.map((member) => (
+              <li key={member.name}>
+                <TeamMember {...member} />
+              </li>
+            ))}
+          </ul>
         </Container>
         {/* <div className="mt-16 flex justify-center">
           <Button asChild variant="secondary" size="md">

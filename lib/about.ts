@@ -1,11 +1,15 @@
 import type { StaticImageData } from "next/image";
 
-// import dal from "@/public/images/teams/dal.jpeg";
-import khaiboih from "@/public/images/teams/khai_boih.jpeg";
+import khaiboihAdminImg from "@/public/images/teams/khaiboih_admin.jpg"
+import dalAdminImg from "@/public/images/teams/dalthang_admin.jpg";
 import marysiam from "@/public/images/teams/mary_siam.jpg";
-// import mungno from "@/public/images/teams/mungno.jpeg";
-import siamnu from "@/public/images/teams/siam_nu.jpeg";
-import teamImage from "@/public/images/team.jpg";
+import niangHoihAdminImg from "@/public/images/teams/niang_hoih_admin.jpg";
+import siamNuAdminImg from "@/public/images/teams/siamnu_admin.jpg";
+import dimnemAdminImg from "@/public/images/teams/dimnem_admin.jpg";
+import sanshalomAdminImg from "@/public/images/teams/sanshalom_admin.jpg";
+import sungAdminImg from "@/public/images/teams/sungsung_admin.jpg";
+import vungpiAdminImg from "@/public/images/teams/vungpi_admin.jpg";
+// import teamImage from "@/public/images/team.jpg";
 
 /**
  * About page content data.
@@ -48,103 +52,45 @@ export const missionPillars: MissionPillar[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Team structure
+// Leadership
 // ---------------------------------------------------------------------------
 
 export interface TeamMemberData {
   name: string;
-  role: string;
+  /**
+   * Every position this person holds, most senior first. Rendered on the
+   * card separated by " | " (e.g. "Executive Director | Training Manager").
+   */
+  positions: string[];
   image: StaticImageData;
 }
 
-export interface TeamSubgroup {
-  /** Subgroup label (e.g. "Education"). Set empty string to hide. */
-  title: string;
-  members: TeamMemberData[];
-}
+/**
+ * Leadership Team, in display order: Office of the Director, then
+ * department managers, then committee chairs. One entry per person —
+ * add extra positions to `positions` rather than duplicating a person.
+ */
+export const leadership: TeamMemberData[] = [
+  // Office of the Director
+  {
+    name: "Mary Siam",
+    positions: ["Executive Director", "Training Manager"],
+    image: marysiam,
+  },
+  { name: "Niang Hoih", positions: ["Assistant Director", "Finance Chair"], image: niangHoihAdminImg },
+  { name: "Siam Nu", positions: ["Assistant Director", "Creative Manager"], image: siamNuAdminImg },
+  { name: "Dim Nem", positions: ["Assistant Director", "HR Vice Chair"], image: dimnemAdminImg },
 
-export interface TeamSectionData {
-  /** Section heading (e.g. "Departments"). */
-  title: string;
-  /** Optional descriptor under the section title. */
-  subtitle?: string;
-  /**
-   * When true, subgroup titles are hidden — used for the Office of the
-   * Director, where there's only one "flat" group of members.
-   */
-  flat?: boolean;
-  groups: TeamSubgroup[];
-}
+  // Departments
+  { name: "Khai Boih", positions: ["Education Manager"], image: khaiboihAdminImg },
+  { name: "Dal Thang", positions: ["Research Manager"], image: dalAdminImg },
+  {
+    name: "San Shalom",
+    positions: ["Zomi Language & Literature Manager"],
+    image: sanshalomAdminImg,
+  },
 
-export const teamStructure: TeamSectionData[] = [
-  {
-    title: "Office of the Director",
-    flat: true,
-    groups: [
-      {
-        title: "",
-        members: [
-          { name: "Lia Mary Siam", role: "Executive Director", image: marysiam },
-          { name: "Lia Niang Hoih", role: "Assistant Director", image: teamImage },
-          { name: "Lia Siam Nu", role: "Assistant Director", image: siamnu },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Departments",
-    subtitle: "Program-focused teams",
-    groups: [
-      {
-        title: "Education",
-        members: [
-          { name: "Khai Boih", role: "Manager", image: khaiboih },
-        ],
-      },
-      {
-        title: "Training",
-        members: [
-          { name: "Lia Mary Siam", role: "Manager", image: marysiam },
-        ],
-      },
-      {
-        title: "Research",
-        members: [
-          { name: "Tg. Dal Thang", role: "Manager", image: teamImage },
-        ],
-      },
-      {
-        title: "Zomi Language & Literature",
-        members: [
-          { name: "San Shalom", role: "Manager", image: teamImage },
-        ],
-      },
-      {
-        title: "Creative",
-        members: [
-          { name: "Siamnu", role: "Manager", image: teamImage },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Committees",
-    subtitle: "Operational support",
-    groups: [
-      {
-        title: "Finance",
-        members: [
-          { name: "Niang Hoih", role: "Chair", image: teamImage },
-          { name: "Sung Sung", role: "Vice Chair", image: teamImage}
-        ],
-      },
-      {
-        title: "Human Resources",
-        members: [
-          { name: "Vungpi", role: "Chair", image: teamImage },
-          { name: "Dim Nem", role: "Vice Chair", image: teamImage },
-        ],
-      },
-    ],
-  },
+  // Committees
+  { name: "Sung Sung", positions: ["Finance Vice Chair"], image: sungAdminImg },
+  { name: "Vungpi", positions: ["Human Resources Chair"], image: vungpiAdminImg }
 ];

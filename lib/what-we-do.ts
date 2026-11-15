@@ -1,7 +1,11 @@
 import type { StaticImageData } from "next/image";
 
+// import images for now
 import volunteerImage from "@/public/images/volunteers.jpg";
 import officeImage from "@/public/images/office.jpg";
+import ellPrograImg from "@/public/images/ell_batch_six.jpg";
+import gradMentorshipImg from "@/public/images/zomi_grad_mentoshi_program.jpg";
+import professionalDevelopmentImg from "@/public/images/professionalDeveloment.jpg";
 
 /**
  * What We Do page content data.
@@ -39,21 +43,21 @@ export const programs: Program[] = [
     category: "Language",
     description:
       "Helping youths improve their English language skills.",
-    image: volunteerImage,
+    image: ellPrograImg,
   },
   {
     name: "Mentorship Program",
     category: "Community",
     description:
       "Connecting youths with mentors for personal and professional growth.",
-    image: volunteerImage,
+    image: gradMentorshipImg,
   },
   {
     name: "Professional Development",
     category: "Career",
     description:
       "Providing resources and training for career advancement.",
-    image: volunteerImage,
+    image: professionalDevelopmentImg,
   },
 ];
 

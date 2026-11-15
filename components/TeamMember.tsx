@@ -2,30 +2,50 @@ import Image from "next/image";
 import type { TeamMemberData } from "@/lib/about";
 
 /**
- * TeamMember — a single team member card.
+ * TeamMember — leadership card for the About page grid.
  *
- * Design:
- * - Circular avatar (128px on mobile, larger on desktop-scale layouts)
- * - Fraunces name for editorial hierarchy
- * - Muted Inter role for supporting detail
- * - Bone-200 placeholder background on the avatar for graceful loading
+ * Design (corporate / restrained):
+ * - Full-bleed 4:5 portrait with a light gray overlay that lifts on hover
+ * - Bold sans-serif name, muted positions separated by " | "
+ * - Left-aligned text, thin border, soft shadow, small radius
+ * - h-full so cards in the same grid row match height when positions wrap
  */
-export function TeamMember({ name, role, image }: TeamMemberData) {
+export function TeamMember({ name, positions, image }: TeamMemberData) {
   return (
-    <div className="flex flex-col items-center text-center">
-      <div className="relative h-28 w-28 overflow-hidden rounded-full bg-bone-200 shadow-raised ring-4 ring-white sm:h-32 sm:w-32">
+    <article className="group flex h-full flex-col overflow-hidden rounded-md border border-bone-200 bg-white shadow-soft transition-shadow duration-200 hover:shadow-raised">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-bone-200">
         <Image
           src={image}
           alt={name}
           fill
-          sizes="(max-width: 640px) 112px, 128px"
-          className="object-cover"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 384px"
+          className="object-cover object-center"
+        />
+        {/* Light gray overlay — fades slightly on hover */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gray-400/20 transition-opacity duration-200 group-hover:opacity-50"
         />
       </div>
-      <p className="mt-4 font-display text-lg font-medium leading-tight text-highland-700">
-        {name}
-      </p>
-      <p className="mt-1 text-sm text-ink-muted">{role}</p>
-    </div>
+
+      <div className="flex flex-1 flex-col border-t border-bone-200 px-5 py-4">
+        <h3 className="text-base font-bold leading-snug text-ink">
+          {name}
+        </h3>
+        <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+          {positions.map((position, i) => (
+            <span key={position}>
+              {i > 0 && (
+                <span aria-hidden="true" className="mx-1.5 text-bone-400">
+                  |
+                </span>
+              )}
+              {i > 0 && <span className="sr-only">, </span>}
+              {position}
+            </span>
+          ))}
+        </p>
+      </div>
+    </article>
   );
 }
