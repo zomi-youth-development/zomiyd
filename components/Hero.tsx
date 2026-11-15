@@ -45,7 +45,7 @@ export function Hero() {
           Zomi Picing · Siamsin Picing
         </p>
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-bone-100 sm:text-lg">
-          A youth-led nonprofit serving Zomi families across America.
+          A youth-led advocacy serving the Zomi diaspora around the globe.
         </p>
         <div className="mt-9 flex justify-center">
           <Button asChild variant="primary" size="lg">
