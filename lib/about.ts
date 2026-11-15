@@ -6,9 +6,10 @@ import marysiam from "@/public/images/teams/mary_siam.jpg";
 import niangHoihAdminImg from "@/public/images/teams/niang_hoih_admin.jpg";
 import siamNuAdminImg from "@/public/images/teams/siamnu_admin.jpg";
 import dimnemAdminImg from "@/public/images/teams/dimnem_admin.jpg";
-import sanshalomAdminImg from "@/public/images/teams/sanshalom_admin.jpg";
+// import sanshalomAdminImg from "@/public/images/teams/sanshalom_admin.jpg";
 import sungAdminImg from "@/public/images/teams/sungsung_admin.jpg";
 import vungpiAdminImg from "@/public/images/teams/vungpi_admin.jpg";
+import personIcon from "@/public/icons/person.svg"
 // import teamImage from "@/public/images/team.jpg";
 
 /**
@@ -77,7 +78,7 @@ export const leadership: TeamMemberData[] = [
     positions: ["Executive Director", "Training Manager"],
     image: marysiam,
   },
-  { name: "Niang Hoih", positions: ["Assistant Director", "Finance Chair"], image: niangHoihAdminImg },
+  { name: "Niang Hoih", positions: ["Assistant Director", "ZoLL Manager"], image: niangHoihAdminImg },
   { name: "Siam Nu", positions: ["Assistant Director", "Creative Manager"], image: siamNuAdminImg },
   { name: "Dim Nem", positions: ["Assistant Director", "HR Vice Chair"], image: dimnemAdminImg },
 
@@ -85,12 +86,12 @@ export const leadership: TeamMemberData[] = [
   { name: "Khai Boih", positions: ["Education Manager"], image: khaiboihAdminImg },
   { name: "Dal Thang", positions: ["Research Manager"], image: dalAdminImg },
   {
-    name: "San Shalom",
-    positions: ["Zomi Language & Literature Manager"],
-    image: sanshalomAdminImg,
+    name: "Zuunpi",
+    positions: ["ELL Team Lead"],
+    image: personIcon,
   },
 
   // Committees
-  { name: "Sung Sung", positions: ["Finance Vice Chair"], image: sungAdminImg },
+  { name: "Sung Sung", positions: ["Finance Chair"], image: sungAdminImg },
   { name: "Vungpi", positions: ["Human Resources Chair"], image: vungpiAdminImg }
 ];
