@@ -47,7 +47,7 @@ export const siteConfig = {
 
   developer: {
     tag: "KM",
-    url: "https://kmung.github.io/",
+    url: "https://mungtawng.com/",
   },
 } as const;
 
